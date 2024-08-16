@@ -1,0 +1,244 @@
+/* Reset CSS básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Garante que padding e border não aumentem o tamanho do elemento */
+}
+
+body {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background: rgb(255, 255, 255) url(../Images/fundo.png) repeat-x;
+    margin: 0;
+    padding: 0;
+}
+
+#container {
+    width: 100%; /* Ocupa toda a largura disponível */
+    max-width: 1200px; /* Define uma largura máxima para o conteúdo */
+    margin: 0 auto; /* Centraliza o container na página */
+    padding: 0 20px; /* Adiciona espaçamento interno */
+    box-sizing: border-box; /* Garante que padding e border não aumentem o tamanho do container */
+}
+
+#topo {
+    height: 150px;
+    padding-top: 25px;
+}
+
+.logo {
+    margin-top: 25px;
+    width: 130px;
+    height: 60px;
+    padding: 0; /* Remove preenchimento padrão */
+    display: flex; /* Usa flexbox para alinhar itens */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+}
+
+.logo img {
+    max-width: 100%; /* Ajusta a largura da imagem para ocupar toda a largura do elemento pai */
+    height: auto; /* Mantém a proporção da imagem */
+    display: block; /* Remove espaços verticais */
+}
+
+/* Estilos para a barra de navegação */
+#navegacao {
+    background: #b10033;
+    margin-top: 15px; /* Reduzido para um espaçamento mais fino */
+    overflow: hidden; /* Limpa o float */
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    max-width: 600px; /* Largura máxima para conter 4 itens */
+    margin: 0 auto; /* Centraliza horizontalmente */
+}
+
+#navegacao li {
+    flex: 1; /* Ocupa espaço igualmente */
+    text-align: center; /* Centraliza o texto */
+    position: relative; /* Para posicionamento relativo */
+    list-style-type: none; /* Remove o marcador padrão */
+}
+
+#navegacao a {
+    font-size: 0.9em;
+    display: block;
+    padding: 0.5em 0;
+    text-decoration: none;
+    color: aliceblue;
+    position: relative; /* Para posicionamento relativo */
+}
+
+#navegacao a::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 1px;
+    height: 100%;
+    background-color: #69001d; /* Cor do divisor */
+}
+
+#navegacao .primeiro a::after {
+    display: none; /* Remove o divisor à esquerda do primeiro item */
+}
+
+#navegacao a:hover {
+    color: #69001d;
+}
+
+/* Layout da página de 3 colunas */
+#conteudo {
+    margin-top: 60px;
+    display: flex;
+    flex-wrap: wrap; /* Permite que os elementos flexíveis sejam quebrados em várias linhas */
+}
+
+#principal,
+#secundario,
+#lateral {
+    flex: 1 0 270px; /* Cresce, mas não encolhe além de 270px */
+    margin-right: 20px; /* Espaçamento entre colunas */
+}
+
+#lateral {
+    flex: 0 0 180px; /* Largura fixa de 180px */
+}
+
+/* Estilos para dispositivos móveis */
+@media only screen and (max-width: 768px) {
+    #navegacao {
+        margin-top: 45px;
+        padding-bottom: 10px; /* Espaçamento inferior */
+        height: 30px;
+        
+    }
+
+    #conteudo {
+        margin-top: 30px;
+    }
+
+    #principal,
+    #secundario,
+    #lateral {
+        flex: 1 0 100%; /* 100% da largura disponível */
+        margin-right: 0;
+    }
+
+    #principal {
+        order: 1; /* Muda a ordem para aparecer depois na tela pequena */
+        margin-top: 65px;
+    }
+
+    #secundario {
+        order: 2; /* Muda a ordem para aparecer depois na tela pequena */
+    }
+
+    #lateral {
+        order: 3; /* Muda a ordem para aparecer primeiro na tela pequena */
+    }
+
+    .logo {
+        width: 100px;
+        height: 45px;
+        display: flex; /* Usa flexbox para alinhar itens */
+        justify-content: center; /* Centraliza horizontalmente */
+        align-items: center; /* Centraliza verticalmente */
+        margin: 0 auto; /* Garante que a logo fique centralizada horizontalmente */
+    }
+    
+
+    #topo {
+        height: 120px;
+    }
+
+    #navegacao {
+        padding-bottom: 5px;
+    }
+
+    #navegacao a {
+        font-size: 0.8em;
+        padding: 0.5em 1em;
+    }
+}
+
+/* Caixa de conteúdo genérica */
+.caixa {
+    margin: 10px 0;
+    padding: 10px;
+    background: #f3f3f3;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.1); /* Adiciona um sombreamento suave */
+}
+
+
+h2 {
+    font-size: 1.1em;
+    padding: 5px;
+    background: #294c71;
+    color: white;
+}
+
+.caixa-conteudo {
+    padding: 5px;
+    margin-top: 5px;
+}
+
+#lista-noticias li {
+    padding: 10px 0;
+    border-bottom: 1px solid #ccc;
+}
+
+#lista-noticias li a img {
+    float: left;
+    margin-right: 10px;
+    border: 2px solid #dfdfdf;
+}
+
+#lista-noticias li a {
+    text-decoration: none;
+    font-size: 0.9em;
+    color: rgb(73, 162, 192);
+}
+
+#lista-noticias li p {
+    font-size: 0.8em;
+    color: black;
+}
+
+/* Rodapé */
+#container-rodape {
+    background: #294c71;
+    padding: 20px;
+    color: #fff;
+    clear: both;
+}
+
+#rodape {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.txtCaixa {
+    text-align: center;
+}
+
+.info-rodape {
+    display: block;
+    align-items: center;
+    margin: auto;
+}
+.info-rodape img {
+    width: 15px; /* Ajuste o tamanho conforme necessário */
+    margin-left: 0,5%; /* Espaço entre o texto e a imagem */
+}
+
+.info-rodape1 {
+    display: block;
+    align-items: center;
+    margin: auto;
+}
+.info-rodape2 {
+    width: 15px; /* Ajuste o tamanho conforme necessário */
+    margin-left: 0,5%; /* Espaço entre o texto e a imagem */
+}
