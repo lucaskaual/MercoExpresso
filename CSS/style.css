@@ -230,15 +230,5 @@ h2 {
 }
 .info-rodape img {
     width: 15px; /* Ajuste o tamanho conforme necessário */
-    margin-left: 0,5%; /* Espaço entre o texto e a imagem */
-}
-
-.info-rodape1 {
-    display: block;
-    align-items: center;
-    margin: auto;
-}
-.info-rodape2 {
-    width: 15px; /* Ajuste o tamanho conforme necessário */
-    margin-left: 0,5%; /* Espaço entre o texto e a imagem */
+    margin-left: 0,8%; /* Espaço entre o texto e a imagem */
 }
